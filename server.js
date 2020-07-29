@@ -142,30 +142,16 @@ app.post("/neworder", (req, res) => {
  
 // tracking
 app.post("/tracking", (req, res) => {
-  if (!req.body) {
-    res.send("No data received");
-  }
- 
-  if (!req.body.tracking_id) {
-    res.send("No tracking id found");
-  }
- 
-  // return response without calling the backend
-  res.send({
-    status: "Order delivered!"
-  });
- 
-  // console.log(req.body);
-  // axios.post(`http://18.221.255.187/delivery/tracking`, {
-  //   "tracking_id": req.body.tracking_id,
-  // })
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       res.send(response.data)
-  //     })
-  //     .catch((error) => {
-  //       res.send(error)
-  //     })
+  axios.post(`http://18.221.255.187/delivery/tracking`, {
+    "tracking_id": req.body.tracking_id,
+  })
+  .then((response) => {
+    console.log(response.data);
+    res.send(response.data)
+  })
+  .catch((error) => {
+    res.send(error)
+  })
 });
  
 // app.post('/activeorder', () => ())
