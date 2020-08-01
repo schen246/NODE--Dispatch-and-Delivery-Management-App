@@ -1,14 +1,14 @@
 const express = require("express");
 const app = express();
 const { resolve } = require("path");
-// const cors = require("cors");
+const cors = require("cors");
 // Replace if using a different env file or config
 const env = require("dotenv").config({ path: "./.env" });
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
  
 app.use(express.static(process.env.STATIC_DIR));
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 const axios = require("axios");
  
 // test communication at /
