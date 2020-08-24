@@ -21,7 +21,7 @@ const portBackend = process.env.PORT_BACKEND || 8080;
 // app.post('/register', () => ())
 app.post("/register", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/register`, {
+    .post(`http://3.133.87.80/delivery/register`, {
       user_id: req.body.user_id,
       password: req.body.password,
       last_name: req.body.last_name,
@@ -42,7 +42,7 @@ app.post("/register", (req, res) => {
 // app.post('/login', ())
 app.post("/login", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/login`, {
+    .post(`http://3.133.87.80/delivery/login`, {
       user_id: req.body.user_id,
       password: req.body.password
     })
@@ -58,7 +58,7 @@ app.post("/login", (req, res) => {
 // transfer to /autocomplete
 app.post("/autocomplete", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/autocomplete`, {
+    .post(`http://3.133.87.80/delivery/autocomplete`, {
       address: req.body.address
     })
     .then(response => {
@@ -72,7 +72,7 @@ app.post("/autocomplete", (req, res) => {
  
 app.post("/validAddr", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/validaddr`, {
+    .post(`http://3.133.87.80/delivery/validaddr`, {
       senderAddr: req.body.senderAddr,
       receiverAddr: req.body.receiverAddr
     })
@@ -88,7 +88,7 @@ app.post("/validAddr", (req, res) => {
 // transfer ship information from client to java servlet /recommendation
 app.post("/recommendation", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/recommendation`, {
+    .post(`http://3.133.87.80/delivery/recommendation`, {
       address: req.body.address,
       receiverAddr: req.body.receiverAddr,
       weight: req.body.weight,
@@ -108,7 +108,7 @@ app.post("/recommendation", (req, res) => {
  
 app.post("/neworder", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/neworder`, {
+    .post(`http://3.133.87.80/delivery/neworder`, {
       userId: req.body.userId,
       senderFirstName: req.body.senderFirstName,
       senderLastName: req.body.senderLastName,
@@ -142,7 +142,7 @@ app.post("/neworder", (req, res) => {
  
 // tracking
 app.post("/tracking", (req, res) => {
-  axios.post(`http://18.221.255.187/delivery/tracking`, {
+  axios.post(`http://3.133.87.80/delivery/tracking`, {
     "tracking_id": req.body.tracking_id,
   })
   .then((response) => {
@@ -157,7 +157,7 @@ app.post("/tracking", (req, res) => {
 // app.post('/activeorder', () => ())
 app.post("/activeorder", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/activeorder`, {
+    .post(`http://3.133.87.80/delivery/activeorder`, {
       user_id: req.body.user_id
     })
     .then(response => {
@@ -172,7 +172,7 @@ app.post("/activeorder", (req, res) => {
  
 app.post("/history", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/history`, {
+    .post(`http://3.133.87.80/delivery/history`, {
       user_id: req.body.user_id
     })
     .then(response => {
@@ -188,7 +188,7 @@ app.post("/history", (req, res) => {
 // app.post('/detail', () => ())
 app.post("/detail", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/detail`, {
+    .post(`http://3.133.87.80/delivery/detail`, {
       order_id: req.body.order_id
     })
     .then(response => {
@@ -204,7 +204,7 @@ app.post("/detail", (req, res) => {
 // app.post('/userprofile', () => ())
 app.post("/userprofile", (req, res) => {
   axios
-    .post(`http://18.221.255.187/delivery/userprofile`, {
+    .post(`http://3.133.87.80/delivery/userprofile`, {
       user_id: req.body.user_id,
       email: req.body.email,
       last_name: req.body.last_name,
